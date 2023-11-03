@@ -1,0 +1,22 @@
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  height: calc(var(--vh, 1vh) * 100);
+}
+
+.hidden {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  overflow: hidden;
+  height: calc(var(--vh, 1vh) * 100);
+
+  video {
+    position: absolute;
+    top: 0;
+  }
+}

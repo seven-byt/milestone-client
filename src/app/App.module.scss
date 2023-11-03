@@ -1,0 +1,23 @@
+@import "../assets/scss/vars";
+@import "../assets/fonts/fonts.css";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Moniqa;
+  color: #3a4450;
+  font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-weight: 400;
+}

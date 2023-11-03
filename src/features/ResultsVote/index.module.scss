@@ -1,0 +1,41 @@
+.results {
+  position: relative;
+  padding-top: 146px;
+  padding-bottom: 55px;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+
+  &__bgImage {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__scales {
+    margin: 0 20vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100 - 146px - 135px);
+  }
+
+  &__scaleItem {
+    margin-right: 8vw;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

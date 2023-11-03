@@ -1,0 +1,65 @@
+.voteControl {
+  padding: 16px 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #fff;
+
+  &__title {
+    margin-bottom: 16px;
+    font-size: 32px;
+    color: #fff;
+  }
+
+  &__btnsWrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__btn {
+    margin-bottom: 8px;
+    padding: 16px 8px;
+    display: block;
+    color: #000;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.resItem {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: 50%;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: sans-serif;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+  }
+  &__value {
+    margin: 0;
+    font-family: sans-serif;
+    margin-top: 10px;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+}

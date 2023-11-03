@@ -1,0 +1,152 @@
+.results {
+  overflow: hidden;
+}
+
+.ellipse1 {
+  position: absolute;
+  top: -211px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 648px;
+  height: 648px;
+  border-radius: 648px;
+  pointer-events: none;
+  filter: blur(36.5px);
+
+  &_ivan {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #101640 0%,
+      rgba(7, 12, 44, 0.17) 100%
+    );
+  }
+  &_vlada {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #75001b 0%,
+      rgba(37, 7, 14, 0.17) 100%
+    );
+  }
+  &_pair {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #9c410b 0%,
+      rgba(130, 54, 10, 0) 100%
+    );
+  }
+  &_ruza {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #99141b 0%,
+      rgba(153, 20, 27, 0.17) 100%
+    );
+  }
+}
+
+.ellipse2 {
+  position: absolute;
+  bottom: -175px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 541px;
+  height: 541px;
+  border-radius: 541.315px;
+  pointer-events: none;
+  filter: blur(36.5px);
+
+  &_ivan {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #101640 0%,
+      rgba(7, 12, 44, 0.55) 100%
+    );
+  }
+  &_vlada {
+    background: radial-gradient(50% 50% at 50% 50%, #75001b 0%, #25070e 100%);
+  }
+  &_pair {
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #9c410b 0%,
+      rgba(105, 43, 6, 0) 100%
+    );
+  }
+  &_ruza {
+    background: radial-gradient(50% 50% at 50% 50%, #620d0f 0%, #2e0809 100%);
+  }
+}
+
+.ivan {
+  &__image1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 154px;
+    height: 408px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: screen;
+    }
+  }
+  &__image2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 104px;
+    height: 379px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      mix-blend-mode: screen;
+    }
+  }
+}
+
+.text {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  font-family: Moniqa;
+  font-size: 49px;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 16px;
+
+  p {
+    margin: 0;
+  }
+}
+.textSec {
+  position: relative;
+  z-index: 10;
+  color: #fff;
+  text-align: center;
+  font-family: Moniqa;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: normal;
+
+  p {
+    margin: 0;
+  }
+}
+
+.btnRefresh {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 auto;
+  z-index: 1000;
+  padding: 16px;
+  border: 1px solid #fff;
+  border-radius: 24px;
+  font-size: 16px;
+  color: #000;
+}

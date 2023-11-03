@@ -1,0 +1,4 @@
+// функция для vw
+@function vw($pixels, $viewportWidth: 360) {
+  @return (100vw / $viewportWidth) * $pixels;
+}

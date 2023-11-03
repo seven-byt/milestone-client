@@ -1,0 +1,133 @@
+.scale {
+  position: relative;
+  width: 104px;
+
+  &__graph {
+    position: relative;
+    display: flex;
+    border-radius: 20px 20px 0px 0px;
+    backdrop-filter: blur(2px);
+    height: 100%;
+    overflow: hidden;
+
+    &_ivan {
+      border: 1px solid #101640;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    &_vlada {
+      border: 1px solid #530317;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    &_pair {
+      border: 1px solid #000;
+      background: rgba(255, 255, 255, 0.1);
+    }
+    &_ruza {
+      border: 2px solid #530317;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &__graphCircle {
+    position: absolute;
+    z-index: 1;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 138px;
+    height: 138px;
+    // background: radial-gradient(
+    //   52.91% 52.91% at 51.5% 48.28%,
+    //   #c0003c 0%,
+    //   #000 100%
+    // );
+    border-radius: 476px;
+    filter: blur(31px);
+    opacity: 0.7;
+
+    &_ivan {
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        #003686 0%,
+        rgba(3, 0, 165, 0) 100%
+      );
+    }
+    &_vlada {
+      background: radial-gradient(
+        52.91% 52.91% at 51.5% 48.28%,
+        #c0003c 0%,
+        #000 100%
+      );
+    }
+    &_pair {
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        #9c410b 0%,
+        rgba(156, 65, 11, 0) 100%
+      );
+    }
+    &_ruza {
+      background: radial-gradient(
+        50% 50% at 50% 50%,
+        #860007 0%,
+        rgba(165, 0, 0, 0) 100%
+      );
+    }
+  }
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  width: 130px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 184px;
+    height: 184px;
+    border-radius: 476px;
+    filter: blur(31px);
+    background: radial-gradient(
+      52.91% 52.91% at 51.5% 48.28%,
+      #000 0%,
+      #000 100%
+    );
+  }
+
+  &__percent {
+    position: relative;
+    z-index: 100;
+    margin: 0 0 10px;
+    color: #fff;
+    font-family: Moniqa;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    text-align: center;
+  }
+
+  &__text {
+    position: relative;
+    z-index: 100;
+    margin: 0;
+    color: #fff;
+    text-align: center;
+    font-family: Moniqa;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    height: 50px;
+  }
+}
