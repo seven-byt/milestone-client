@@ -13,7 +13,7 @@ export const Vote = () => {
   }, []);
 
   // 🔌⚡️ get the connected socket client from our useSocket hook!
-  const { socket, isConnected } = useSocket({
+  const { socket } = useSocket({
     endpoint: `http://localhost:8000`,
     token: randomUser,
   });

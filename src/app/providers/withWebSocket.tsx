@@ -4,7 +4,7 @@ import { ReactNode, useEffect, useMemo, useState } from "react";
 import {
   ClientToServerEvents,
   ServerToClientEvents,
-} from "../../contexts/webSocket/WebSocketContext";
+} from "../../contexts/webSocket/webSocketContext";
 import { storage } from "../../helpers/storage";
 
 interface IWithWebSocket {

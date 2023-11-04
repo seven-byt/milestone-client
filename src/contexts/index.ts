@@ -1,4 +1,4 @@
 export {
   WebSocketContext,
   useWebSocketContext,
-} from "./webSocket/WebSocketContext";
+} from "./webSocket/webSocketContext";
