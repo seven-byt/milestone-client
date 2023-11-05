@@ -63,7 +63,7 @@ export const WithWebSocket = ({ children }: IWithWebSocket) => {
     useMemo(() => {
       if (!user) return null;
       // return socketIOClient("http://localhost:8000", {
-      return socketIOClient("http://soc.milestone-rnd.ru/", {
+      return socketIOClient("https://soc.milestone-rnd.ru/", {
         auth: {
           token: user?.token,
         },
