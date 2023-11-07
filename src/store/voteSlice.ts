@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { INITIAL_VOTES } from "../pages/constants";
+// import { INITIAL_VOTES } from "../pages/constants";
 
 export type IVoteState = {
   id: number;
@@ -14,11 +14,12 @@ export type IVoteState = {
 };
 
 export interface IVotesState {
-  votes: IVoteState[];
+  votes: IVoteState[] | null;
 }
 
 const initialState: IVotesState = {
-  votes: INITIAL_VOTES,
+  // votes: INITIAL_VOTES,
+  votes: null,
 };
 
 export const votesSlice = createSlice({

@@ -33,7 +33,7 @@ export const VoteControl = ({
 
         <div className={styles.result}>
           {vote.options.map((opt, index) => (
-            <div className={styles.resItem}>
+            <div key={index} className={styles.resItem}>
               <p className={styles.resItem__title}>{opt.text}</p>
               <p className={styles.resItem__value}>
                 {index === 0
@@ -45,6 +45,16 @@ export const VoteControl = ({
             </div>
           ))}
         </div>
+        <p className={styles.resItem__title}>
+          Статус:{" "}
+          {vote.enabled
+            ? "Активен"
+            : vote.results
+            ? "Результаты"
+            : vote.completed
+            ? "Завершен"
+            : "Не активен"}
+        </p>
       </div>
     </div>
   );

@@ -41,6 +41,8 @@ const AdminPage = () => {
     socket.emit("initialVotes", votes);
   };
 
+  if (!votes) return;
+
   return (
     <section className={cn("screen", styles.admin)}>
       <div className={styles.admin__grid}>
