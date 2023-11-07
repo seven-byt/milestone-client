@@ -22,6 +22,7 @@ const ResultsPage = () => {
   }, [socket]);
 
   const activeVote: IVoteState | undefined = useMemo(() => {
+    if (!votes) return;
     return votes.find((el) => !!el.enabled);
   }, [votes]);
 
