@@ -5,22 +5,27 @@ import styles from "./index.module.scss";
 import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
 
+import ivan from "../../assets/videos/ivan.mp4";
+import ruza from "../../assets/videos/ruza.mp4";
+import pair from "../../assets/videos/pair.mp4";
+import vlada from "../../assets/videos/vlada.mp4";
+
 interface IResultsVote {
   activeVote: IVoteState;
-  ivan: string;
-  vlada: string;
-  pair: string;
-  ruza: string;
+  // ivan: string;
+  // vlada: string;
+  // pair: string;
+  // ruza: string;
 }
 
 //TODO: подставить актуальные значение голосов
 export const ResultsVote = ({
   activeVote,
-  ivan,
-  vlada,
-  pair,
-  ruza,
-}: IResultsVote) => {
+}: // ivan,
+// vlada,
+// pair,
+// ruza,
+IResultsVote) => {
   return (
     <div className={styles.results}>
       <div className={styles.results__bgImage}>

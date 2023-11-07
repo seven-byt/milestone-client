@@ -11,10 +11,10 @@ import { storage } from "../../helpers/storage";
 import { ILocalToken } from "../../app/providers/withWebSocket";
 import { ActiveVote, ThanksVote, Soon, ResultsVote } from "../../features";
 
-import ivan from "../../assets/videos/ivan.mp4";
-import ruza from "../../assets/videos/ruza.mp4";
-import pair from "../../assets/videos/pair.mp4";
-import vlada from "../../assets/videos/vlada.mp4";
+// import ivan from "../../assets/videos/ivan.mp4";
+// import ruza from "../../assets/videos/ruza.mp4";
+// import pair from "../../assets/videos/pair.mp4";
+// import vlada from "../../assets/videos/vlada.mp4";
 
 const VotePage = () => {
   const dispatch = useAppDispatch();
@@ -88,12 +88,6 @@ const VotePage = () => {
 
   return (
     <div className={cn("screen", styles.page)}>
-      <div className={styles.hidden}>
-        <video src={ivan} loop playsInline x5-playsinline autoPlay></video>
-        <video src={ruza} loop playsInline x5-playsinline autoPlay></video>
-        <video src={vlada} loop playsInline x5-playsinline autoPlay></video>
-        <video src={pair} loop playsInline x5-playsinline autoPlay></video>
-      </div>
       {activeVote.enabled && !isVoted() && (
         <ActiveVote activeVote={activeVote} handleVote={handleVote} />
       )}
@@ -103,10 +97,10 @@ const VotePage = () => {
       {activeVote.results && (
         <ResultsVote
           activeVote={activeVote}
-          ivan={ivan}
-          ruza={ruza}
-          pair={pair}
-          vlada={vlada}
+          // ivan={ivan}
+          // ruza={ruza}
+          // pair={pair}
+          // vlada={vlada}
         />
       )}
     </div>
