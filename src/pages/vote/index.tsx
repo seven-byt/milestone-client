@@ -81,12 +81,6 @@ const VotePage = () => {
   if (!activeVote) {
     return (
       <div className={cn("screen", styles.page)}>
-        <div className={styles.hidden}>
-          <video src={ivan} loop playsInline autoPlay muted></video>
-          <video src={ruza} loop playsInline autoPlay muted></video>
-          <video src={vlada} loop playsInline autoPlay muted></video>
-          <video src={pair} loop playsInline autoPlay muted></video>
-        </div>
         <Soon />
       </div>
     );
@@ -95,10 +89,10 @@ const VotePage = () => {
   return (
     <div className={cn("screen", styles.page)}>
       <div className={styles.hidden}>
-        <video src={ivan} loop playsInline autoPlay muted></video>
-        <video src={ruza} loop playsInline autoPlay muted></video>
-        <video src={vlada} loop playsInline autoPlay muted></video>
-        <video src={pair} loop playsInline autoPlay muted></video>
+        <video src={ivan} loop playsInline x5-playsinline autoPlay></video>
+        <video src={ruza} loop playsInline x5-playsinline autoPlay></video>
+        <video src={vlada} loop playsInline x5-playsinline autoPlay></video>
+        <video src={pair} loop playsInline x5-playsinline autoPlay></video>
       </div>
       {activeVote.enabled && !isVoted() && (
         <ActiveVote activeVote={activeVote} handleVote={handleVote} />
