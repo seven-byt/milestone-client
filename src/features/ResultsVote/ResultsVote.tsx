@@ -38,6 +38,7 @@ export const ResultsVote = ({
           playsInline
           autoPlay
           muted
+          x5-playsinline
         ></video>
       </div>
 
