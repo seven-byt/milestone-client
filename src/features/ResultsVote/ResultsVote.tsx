@@ -29,7 +29,7 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
     progressInterval: 100,
     loop: true,
     controls: false,
-    // playsinline: true,
+    playsinline: true,
     volume: 1,
     ref: videoRef,
   };
@@ -60,18 +60,17 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
           />
         </video> */}
         <ReactPlayer
-          // onProgress={handleProgress}
           onReady={onVideoReady}
           url={
-            activeVote.id === 1
-              ? ivan
-              : activeVote.id === 2
-              ? vlada
-              : activeVote.id === 3
-              ? pair
-              : ruza
+            ruza
+            // activeVote.id === 1
+            //   ? ivan
+            //   : activeVote.id === 2
+            //   ? vlada
+            //   : activeVote.id === 3
+            //   ? pair
+            //   : ruza
           }
-          playsinline={playing}
           playing={playing}
           muted={true}
           {...settings}
