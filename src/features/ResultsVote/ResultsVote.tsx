@@ -5,10 +5,10 @@ import styles from "./index.module.scss";
 import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
 
-import ivan from "../../assets/ivan.mp4";
+// import ivan from "../../assets/ivan.mp4";
 import ruza from "../../assets/ruza.mp4";
-import pair from "../../assets/pair.mp4";
-import vlada from "../../assets/vlada.mp4";
+// import pair from "../../assets/pair.mp4";
+// import vlada from "../../assets/vlada.mp4";
 import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 
