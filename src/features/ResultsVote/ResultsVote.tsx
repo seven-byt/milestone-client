@@ -6,9 +6,9 @@ import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
 
 // import ivan from "../../assets/videos/ivan2.mp4";
-import ruza from "../../assets/videos/ruza.mp4";
-import pair from "../../assets/videos/pair.mp4";
-import vlada from "../../assets/videos/vlada.mp4";
+// import ruza from "../../assets/videos/ruza.mp4";
+// import pair from "../../assets/videos/pair.mp4";
+// import vlada from "../../assets/videos/vlada.mp4";
 // import { useEffect, useRef, useState } from "react";
 // import ReactPlayer from "react-player";
 
@@ -51,10 +51,10 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
               activeVote.id === 1
                 ? "https://github.com/seven-byt/milestone-client/blob/main/src/assets/videos/ivan.mp4?raw=true"
                 : activeVote.id === 2
-                ? vlada
+                ? "https://github.com/seven-byt/milestone-client/blob/main/src/assets/videos/vlada.mp4?raw=true"
                 : activeVote.id === 3
-                ? pair
-                : ruza
+                ? "https://github.com/seven-byt/milestone-client/blob/main/src/assets/videos/pair.mp4?raw=true"
+                : "https://github.com/seven-byt/milestone-client/blob/main/src/assets/videos/ruza.mp4?raw=true"
             }
             type="video/mp4"
           />
