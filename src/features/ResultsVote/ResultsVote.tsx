@@ -44,7 +44,8 @@ IResultsVote) => {
     ref: videoRef,
   };
 
-  const onVideoReady = () => {
+  const onVideoReady = (player: ReactPlayer) => {
+    alert(player.props.playing);
     setVideoReady(true);
   };
 
