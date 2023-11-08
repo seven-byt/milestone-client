@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.6",
+    "@vitejs/plugin-react-swc": "^3.4.1",
     "axios": "^1.5.0",
     "classnames": "^2.3.2",
     "compose-function": "^3.0.3",
@@ -21,7 +22,8 @@
     "react-redux": "^8.1.2",
     "react-router": "^6.16.0",
     "react-router-dom": "^6.16.0",
-    "socket.io-client": "^4.7.2"
+    "socket.io-client": "^4.7.2",
+    "vite-plugin-compression": "^0.5.1"
   },
   "devDependencies": {
     "@types/compose-function": "^0.0.31",
