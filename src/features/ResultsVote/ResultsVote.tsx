@@ -35,30 +35,16 @@ IResultsVote) => {
     }, 100);
   }, []);
 
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    alert(videoRef.current);
+  }, [videoRef]);
+
   return (
     <div className={styles.results}>
       <div className={styles.results__bgImage}>
-        <video
-          // src={
-          //   activeVote.id === 1
-          //     ? ivan
-          //     : activeVote.id === 2
-          //     ? vlada
-          //     : activeVote.id === 3
-          //     ? pair
-          //     : ruza
-          // }
-          // loop
-          // playsInline
-          // autoPlay
-          // muted
-          // x5-playsinline
-          ref={videoRef}
-          playsInline
-          loop
-          autoPlay
-          muted
-        >
+        <video ref={videoRef} playsInline loop muted>
           <source
             src={
               activeVote.id === 1
