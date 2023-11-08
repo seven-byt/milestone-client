@@ -5,10 +5,10 @@ import styles from "./index.module.scss";
 import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
 
-// import ivan from "../../assets/ivan.mp4";
-// import ruza from "../../assets/ruza.mp4";
-// import pair from "../../assets/pair.mp4";
-// import vlada from "../../assets/vlada.mp4";
+import ivan from "../../assets/ivan.mp4";
+import ruza from "../../assets/ruza.mp4";
+import pair from "../../assets/pair.mp4";
+import vlada from "../../assets/vlada.mp4";
 import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 
@@ -62,14 +62,13 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
         <ReactPlayer
           onReady={onVideoReady}
           url={
-            "https://www.youtube.com/watch?v=PSdmW1BHu5E&ab_channel=LosAnimals"
-            // activeVote.id === 1
-            //   ? ivan
-            //   : activeVote.id === 2
-            //   ? vlada
-            //   : activeVote.id === 3
-            //   ? pair
-            //   : ruza
+            activeVote.id === 1
+              ? ivan
+              : activeVote.id === 2
+              ? vlada
+              : activeVote.id === 3
+              ? pair
+              : ruza
           }
           playing={playing}
           muted={true}
