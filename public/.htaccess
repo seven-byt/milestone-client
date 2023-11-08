@@ -2,8 +2,3 @@ Options -MultiViews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^ index.html [QSA,L]
-<FilesMatch mp4>
-Satisfy any
-order allow,deny
-allow from all
-</FilesMatch>

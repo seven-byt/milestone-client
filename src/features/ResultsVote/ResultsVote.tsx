@@ -5,7 +5,7 @@ import styles from "./index.module.scss";
 import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
 
-import ivan from "../../assets/videos/ivan.mp4";
+import ivan from "../../assets/videos/ivan2.mp4";
 import ruza from "../../assets/videos/ruza.mp4";
 import pair from "../../assets/videos/pair.mp4";
 import vlada from "../../assets/videos/vlada.mp4";
