@@ -9,8 +9,8 @@ import ivan from "../../assets/videos/ivan.mp4";
 import ruza from "../../assets/videos/ruza.mp4";
 import pair from "../../assets/videos/pair.mp4";
 import vlada from "../../assets/videos/vlada.mp4";
-import { useEffect, useRef, useState } from "react";
-import ReactPlayer from "react-player";
+// import { useEffect, useRef, useState } from "react";
+// import ReactPlayer from "react-player";
 
 interface IResultsVote {
   activeVote: IVoteState;
@@ -18,34 +18,34 @@ interface IResultsVote {
 
 //TODO: подставить актуальные значение голосов
 export const ResultsVote = ({ activeVote }: IResultsVote) => {
-  const videoRef = useRef<ReactPlayer>(null);
-  const [playing, setPlaying] = useState<boolean>(false);
-  const [videoReady, setVideoReady] = useState<boolean>(false);
+  // const videoRef = useRef<ReactPlayer>(null);
+  // const [playing, setPlaying] = useState<boolean>(false);
+  // const [videoReady, setVideoReady] = useState<boolean>(false);
 
-  const settings = {
-    className: styles.video__player,
-    width: "100%",
-    height: "100%",
-    progressInterval: 100,
-    loop: true,
-    controls: false,
-    playsinline: true,
-    volume: 1,
-    ref: videoRef,
-  };
+  // const settings = {
+  //   className: styles.video__player,
+  //   width: "100%",
+  //   height: "100%",
+  //   progressInterval: 100,
+  //   loop: true,
+  //   controls: false,
+  //   playsinline: true,
+  //   volume: 1,
+  //   ref: videoRef,
+  // };
 
-  const onVideoReady = () => {
-    setVideoReady(true);
-  };
+  // const onVideoReady = () => {
+  //   setVideoReady(true);
+  // };
 
-  useEffect(() => {
-    setPlaying(true);
-  }, [videoReady]);
+  // useEffect(() => {
+  //   setPlaying(true);
+  // }, [videoReady]);
 
   return (
     <div className={styles.results}>
       <div className={styles.results__bgImage}>
-        {/* <video ref={videoRef} playsInline loop muted>
+        <video /* ref={videoRef} */ playsInline loop muted autoPlay>
           <source
             src={
               activeVote.id === 1
@@ -58,8 +58,8 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
             }
             type="video/mp4"
           />
-        </video> */}
-        <ReactPlayer
+        </video>
+        {/* <ReactPlayer
           onReady={onVideoReady}
           url={
             activeVote.id === 1
@@ -73,7 +73,7 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
           playing={playing}
           muted={true}
           {...settings}
-        />
+        /> */}
       </div>
 
       <div className={styles.results__scales}>
