@@ -49,7 +49,7 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
           <source
             src={
               activeVote.id === 1
-                ? ivan
+                ? "https://github.com/seven-byt/milestone-client/blob/main/src/assets/videos/ivan.mp4?raw=true"
                 : activeVote.id === 2
                 ? vlada
                 : activeVote.id === 3
