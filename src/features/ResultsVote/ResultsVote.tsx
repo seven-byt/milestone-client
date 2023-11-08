@@ -9,6 +9,7 @@ import ivan from "../../assets/videos/ivan.mp4";
 import ruza from "../../assets/videos/ruza.mp4";
 import pair from "../../assets/videos/pair.mp4";
 import vlada from "../../assets/videos/vlada.mp4";
+import { useEffect, useRef } from "react";
 
 interface IResultsVote {
   activeVote: IVoteState;
@@ -26,25 +27,53 @@ export const ResultsVote = ({
 // pair,
 // ruza,
 IResultsVote) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    setTimeout(() => {
+      videoRef.current?.play();
+    }, 100);
+  }, []);
+
   return (
     <div className={styles.results}>
       <div className={styles.results__bgImage}>
         <video
-          src={
-            activeVote.id === 1
-              ? ivan
-              : activeVote.id === 2
-              ? vlada
-              : activeVote.id === 3
-              ? pair
-              : ruza
-          }
-          loop
+          // src={
+          //   activeVote.id === 1
+          //     ? ivan
+          //     : activeVote.id === 2
+          //     ? vlada
+          //     : activeVote.id === 3
+          //     ? pair
+          //     : ruza
+          // }
+          // loop
+          // playsInline
+          // autoPlay
+          // muted
+          // x5-playsinline
+          ref={videoRef}
+          //@ts-ignore
+          pip="false"
           playsInline
+          loop
           autoPlay
           muted
-          x5-playsinline
-        ></video>
+        >
+          <source
+            src={
+              activeVote.id === 1
+                ? ivan
+                : activeVote.id === 2
+                ? vlada
+                : activeVote.id === 3
+                ? pair
+                : ruza
+            }
+            type="video/mp4"
+          />
+        </video>
       </div>
 
       <div className={styles.results__scales}>
