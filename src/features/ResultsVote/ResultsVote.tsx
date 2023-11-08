@@ -54,8 +54,6 @@ IResultsVote) => {
           // muted
           // x5-playsinline
           ref={videoRef}
-          //@ts-ignore
-          pip="false"
           playsInline
           loop
           autoPlay
