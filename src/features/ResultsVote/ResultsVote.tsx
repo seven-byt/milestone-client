@@ -9,7 +9,7 @@ import ivan from "../../assets/videos/ivan.mp4";
 import ruza from "../../assets/videos/ruza.mp4";
 import pair from "../../assets/videos/pair.mp4";
 import vlada from "../../assets/videos/vlada.mp4";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 
 interface IResultsVote {
@@ -29,8 +29,8 @@ export const ResultsVote = ({
 // ruza,
 IResultsVote) => {
   const videoRef = useRef<ReactPlayer>(null);
-  // const [loadedSeconds, setLoadedSeconds] = useState<number>(0);
-  // const [playedSeconds, setPlayedSeconds] = useState<number>(0);
+  const [playing, setPlaying] = useState<boolean>(false);
+  const [videoReady, setVideoReady] = useState<boolean>(false);
 
   const settings = {
     className: styles.video__player,
@@ -40,17 +40,17 @@ IResultsVote) => {
     loop: true,
     controls: false,
     playsinline: true,
-    stopOnUnmount: true,
     volume: 1,
     ref: videoRef,
   };
 
-  // const videoReady = () => {
-  //   if (loadedSeconds === 0) {
-  //     // @ts-ignore
-  //     setLoadedSeconds(innerRef.current.getDuration() * 1000);
-  //   }
-  // };
+  const onVideoReady = () => {
+    setVideoReady(true);
+  };
+
+  useEffect(() => {
+    setPlaying(true);
+  }, [videoReady]);
 
   // const handleProgress = (obj: any) => {
   //   setPlayedSeconds(obj.playedSeconds * 1000);
@@ -75,7 +75,7 @@ IResultsVote) => {
         </video> */}
         <ReactPlayer
           // onProgress={handleProgress}
-          // onReady={videoReady}
+          onReady={onVideoReady}
           url={
             activeVote.id === 1
               ? ivan
@@ -85,7 +85,7 @@ IResultsVote) => {
               ? pair
               : ruza
           }
-          playing={true}
+          playing={playing}
           muted={true}
           {...settings}
         />
