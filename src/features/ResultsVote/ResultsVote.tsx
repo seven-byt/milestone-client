@@ -14,20 +14,10 @@ import ReactPlayer from "react-player";
 
 interface IResultsVote {
   activeVote: IVoteState;
-  // ivan: string;
-  // vlada: string;
-  // pair: string;
-  // ruza: string;
 }
 
 //TODO: подставить актуальные значение голосов
-export const ResultsVote = ({
-  activeVote,
-}: // ivan,
-// vlada,
-// pair,
-// ruza,
-IResultsVote) => {
+export const ResultsVote = ({ activeVote }: IResultsVote) => {
   const videoRef = useRef<ReactPlayer>(null);
   const [playing, setPlaying] = useState<boolean>(false);
   const [videoReady, setVideoReady] = useState<boolean>(false);
@@ -39,7 +29,7 @@ IResultsVote) => {
     progressInterval: 100,
     loop: true,
     controls: false,
-    playsinline: true,
+    // playsinline: true,
     volume: 1,
     ref: videoRef,
   };
@@ -51,10 +41,6 @@ IResultsVote) => {
   useEffect(() => {
     setPlaying(true);
   }, [videoReady]);
-
-  // const handleProgress = (obj: any) => {
-  //   setPlayedSeconds(obj.playedSeconds * 1000);
-  // };
 
   return (
     <div className={styles.results}>
@@ -85,6 +71,7 @@ IResultsVote) => {
               ? pair
               : ruza
           }
+          playsinline={playing}
           playing={playing}
           muted={true}
           {...settings}
