@@ -6,7 +6,6 @@ import { IVoteState } from "../../store/voteSlice";
 // import ivan2 from "../../assets/thx/ivan2.png";
 
 import styles from "./index.module.scss";
-import { storage } from "../../helpers/storage";
 
 interface IThanksVote {
   activeVote: IVoteState;
