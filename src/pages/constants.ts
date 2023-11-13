@@ -23,12 +23,12 @@ export const INITIAL_VOTES = [
     options: [
       {
         id: 1,
-        text: "Утопать в рутине",
+        text: "Стабильное завтра",
         votes: 0,
       },
       {
         id: 2,
-        text: "Вырваться на свободу",
+        text: "Неизвестность свободы",
         votes: 0,
       },
     ],
@@ -41,12 +41,12 @@ export const INITIAL_VOTES = [
     options: [
       {
         id: 1,
-        text: "Поверить в себя",
+        text: "Бороться за мечту",
         votes: 0,
       },
       {
         id: 2,
-        text: "Прислушаться к чужому мнению",
+        text: "Продолжить поиски себя",
         votes: 0,
       },
     ],

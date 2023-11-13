@@ -52,13 +52,13 @@ export const ThanksVote = ({ activeVote }: IThanksVote) => {
       </div>
       <div className={styles.textSec}>
         <p>
-          Через несколько минут, здесь
+          Через несколько минут здесь
           <br />
           будут результаты.
         </p>
       </div>
 
-      <button
+      {/* <button
         className={styles.btnRefresh}
         onClick={() => {
           storage("token", null);
@@ -66,7 +66,7 @@ export const ThanksVote = ({ activeVote }: IThanksVote) => {
         }}
       >
         Обнулить
-      </button>
+      </button> */}
     </div>
   );
 };

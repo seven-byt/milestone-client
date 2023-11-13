@@ -11,11 +11,6 @@ import { storage } from "../../helpers/storage";
 import { ILocalToken } from "../../app/providers/withWebSocket";
 import { ActiveVote, ThanksVote, Soon, ResultsVote } from "../../features";
 
-// import ivan from "../../assets/videos/ivan.mp4";
-// import ruza from "../../assets/videos/ruza.mp4";
-// import pair from "../../assets/videos/pair.mp4";
-// import vlada from "../../assets/videos/vlada.mp4";
-
 const VotePage = () => {
   const dispatch = useAppDispatch();
   const { socket, isConnected } = useWebSocketContext();
@@ -94,15 +89,7 @@ const VotePage = () => {
       {activeVote.enabled && isVoted() && (
         <ThanksVote activeVote={activeVote} />
       )}
-      {activeVote.results && (
-        <ResultsVote
-          activeVote={activeVote}
-          // ivan={ivan}
-          // ruza={ruza}
-          // pair={pair}
-          // vlada={vlada}
-        />
-      )}
+      {activeVote.results && <ResultsVote activeVote={activeVote} />}
     </div>
   );
 };

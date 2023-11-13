@@ -1,51 +1,36 @@
+import { useState } from "react";
 import { IVoteState } from "../../store/voteSlice";
 
 import styles from "./index.module.scss";
 
 import { percentVotes } from "../../helpers/percentVotes";
 import { Scale } from "../../shared";
-
-// import ivan from "../../assets/videos/ivan2.mp4";
-// import ruza from "../../assets/videos/ruza.mp4";
-// import pair from "../../assets/videos/pair.mp4";
-// import vlada from "../../assets/videos/vlada.mp4";
-// import { useEffect, useRef, useState } from "react";
-// import ReactPlayer from "react-player";
+import cn from "classnames";
 
 interface IResultsVote {
   activeVote: IVoteState;
 }
 
-//TODO: подставить актуальные значение голосов
 export const ResultsVote = ({ activeVote }: IResultsVote) => {
-  // const videoRef = useRef<ReactPlayer>(null);
-  // const [playing, setPlaying] = useState<boolean>(false);
-  // const [videoReady, setVideoReady] = useState<boolean>(false);
-
-  // const settings = {
-  //   className: styles.video__player,
-  //   width: "100%",
-  //   height: "100%",
-  //   progressInterval: 100,
-  //   loop: true,
-  //   controls: false,
-  //   playsinline: true,
-  //   volume: 1,
-  //   ref: videoRef,
-  // };
-
-  // const onVideoReady = () => {
-  //   setVideoReady(true);
-  // };
-
-  // useEffect(() => {
-  //   setPlaying(true);
-  // }, [videoReady]);
+  const [videoReady, setVideoReady] = useState<boolean>(false);
 
   return (
     <div className={styles.results}>
-      <div className={styles.results__bgImage}>
-        <video /* ref={videoRef} */ playsInline loop muted autoPlay>
+      <div
+        className={cn(styles.results__bgImage, {
+          [styles.results__bgImage_ivan]: activeVote.id === 1,
+          [styles.results__bgImage_vlada]: activeVote.id === 2,
+          [styles.results__bgImage_pair]: activeVote.id === 3,
+          [styles.results__bgImage_ruza]: activeVote.id === 4,
+        })}
+      >
+        <video
+          onCanPlay={() => setVideoReady(true)}
+          playsInline
+          loop
+          muted
+          autoPlay
+        >
           <source
             src={
               activeVote.id === 1
@@ -59,46 +44,47 @@ export const ResultsVote = ({ activeVote }: IResultsVote) => {
             type="video/mp4"
           />
         </video>
-        {/* <ReactPlayer
-          onReady={onVideoReady}
-          url={
-            activeVote.id === 1
-              ? ivan
-              : activeVote.id === 2
-              ? vlada
-              : activeVote.id === 3
-              ? pair
-              : ruza
-          }
-          playing={playing}
-          muted={true}
-          {...settings}
-        /> */}
       </div>
 
-      <div className={styles.results__scales}>
-        <Scale
-          id={activeVote.id}
-          className={styles.results__scaleItem}
-          text={activeVote.options[0].text}
-          percent={percentVotes(
-            activeVote.options[0].votes,
-            activeVote.options[1].votes
-          )}
-        />
-        <Scale
-          id={activeVote.id}
-          className={styles.results__scaleItem}
-          text={activeVote.options[1].text}
-          percent={
-            100 -
-            percentVotes(
-              activeVote.options[0].votes,
-              activeVote.options[1].votes
-            )
-          }
-        />
-      </div>
+      {videoReady && (
+        <div className={styles.results__scales}>
+          <Scale
+            id={activeVote.id}
+            className={styles.results__scaleItem}
+            text={activeVote.options[0].text}
+            percent={
+              percentVotes(
+                activeVote.options[0].votes,
+                activeVote.options[1].votes
+              ) >= 100
+                ? 100
+                : percentVotes(
+                    activeVote.options[0].votes,
+                    activeVote.options[1].votes
+                  )
+            }
+          />
+          <Scale
+            id={activeVote.id}
+            className={styles.results__scaleItem}
+            text={activeVote.options[1].text}
+            percent={
+              100 -
+                percentVotes(
+                  activeVote.options[0].votes,
+                  activeVote.options[1].votes
+                ) >=
+              100
+                ? 100
+                : 100 -
+                  percentVotes(
+                    activeVote.options[0].votes,
+                    activeVote.options[1].votes
+                  )
+            }
+          />
+        </div>
+      )}
     </div>
   );
 };
